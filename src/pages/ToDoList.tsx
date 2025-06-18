@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 import { useState, useEffect } from 'react'
 import '../App.css'
 import Swal from 'sweetalert2'
@@ -53,17 +53,22 @@ export default function App() {
         }
     })
 
-    const getapi = async () => {
-        try{
-            const result = await axios.get(`${import.meta.env.VITE_APP_API}/todos`)
 
-            setToDoList(result.data)
-            setLoading(false)
-            console.log('API Result: ', result.data)
-        }
-        catch(err){
-            console.log('Error fetching data:', err)
-        }
+
+    const getapi = async () => {
+
+        setLoading(false)
+        setToDoList([])
+        // try{
+        //     const result = await axios.get(`${import.meta.env.VITE_APP_API}/todos`)
+
+        //     setToDoList(result.data)
+        //     setLoading(false)
+        //     console.log('API Result: ', result.data)
+        // }
+        // catch(err){
+        //     console.log('Error fetching data:', err)
+        // }
     }
 
     const postapi = async (data: z.infer<typeof FormSchema>) => {
