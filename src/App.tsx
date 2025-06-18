@@ -12,14 +12,14 @@ export default function App() {
 
   return (
     <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
-      <Router>
+      {/* <Router> */}
         <Navbar />
 
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/todolist' element={<ToDoList />} />
         </Routes>
-      </Router>
+      {/* </Router> */}
     </ThemeProvider>
   )
 }
